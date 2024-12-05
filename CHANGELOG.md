@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0] - 2023-09-15
+## [1.0.0] - 2024-12-03
 
 ### Added
-- This is a default template changelog that follows the [KeepAChangelog Convention](https://keepachangelog.com/en/1.1.0/)
+- First Release! Nothirium (0.3.4 beta) and LoliASM (5.20) compatibility with onDemandAnimatedTextures
