@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.1] - 2024-12-05
+
+### Fixed
+- Optifine compatibility, now turns off the tweak when Optifine is present as it is not needed
+
 ## [1.0.0] - 2024-12-03
 
 ### Added
