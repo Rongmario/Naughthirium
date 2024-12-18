@@ -6,7 +6,6 @@ import net.minecraftforge.fml.common.LoadController;
 import net.minecraftforge.fml.common.MetadataCollection;
 import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import zone.rong.loliasm.LoliReflector;
 import zone.rong.loliasm.config.LoliConfig;
 import zone.rong.mixinbooter.Context;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
@@ -56,7 +55,7 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public boolean shouldMixinConfigQueue(Context context) {
-        return LoliConfig.instance.onDemandAnimatedTextures && !LoliReflector.doesClassExist("optifine.OptiFineForgeTweaker");
+        return LoliConfig.instance.onDemandAnimatedTextures;
     }
 
     public static class Container extends DummyModContainer {
