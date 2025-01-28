@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.3] - 2025-01-28
+
+### Fixed
+- Further Cleanroom compatibility, `onDemandAnimatedTextures` config option now correctly reflects fixes
+
 ## [1.0.2] - 2024-12-18
 
 ### Fixed
