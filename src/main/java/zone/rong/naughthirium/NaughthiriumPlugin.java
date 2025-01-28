@@ -3,6 +3,7 @@ package zone.rong.naughthirium;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
+import zone.rong.loliasm.config.LoliConfig;
 import zone.rong.loliasm.core.LoliTransformer;
 
 import java.util.Collections;
@@ -21,7 +22,7 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return !LoliTransformer.isOptifineInstalled;
+        return LoliConfig.instance.onDemandAnimatedTextures && !LoliTransformer.isOptifineInstalled;
     }
 
     @Override
