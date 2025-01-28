@@ -53,11 +53,6 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
         return Collections.singletonList("mixins.naughthirium.json");
     }
 
-    @Override
-    public boolean shouldMixinConfigQueue(Context context) {
-        return LoliConfig.instance.onDemandAnimatedTextures;
-    }
-
     public static class Container extends DummyModContainer {
 
         private static ModMetadata loadMetadata() {
