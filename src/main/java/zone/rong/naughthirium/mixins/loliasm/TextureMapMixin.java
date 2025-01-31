@@ -1,5 +1,6 @@
 package zone.rong.naughthirium.mixins.loliasm;
 
+import meldexun.nothirium.api.renderer.chunk.IChunkRenderer;
 import meldexun.nothirium.mc.renderer.ChunkRenderManager;
 import meldexun.nothirium.renderer.chunk.AbstractRenderChunk;
 import net.minecraft.client.Minecraft;
@@ -19,13 +20,16 @@ public abstract class TextureMapMixin extends AbstractTexture {
     @Inject(method = "updateAnimations", at = @At("HEAD"))
     private void setNothiriumSprites(CallbackInfo ci) {
         if ((Object) this == Minecraft.getMinecraft().getTextureMapBlocks()) {
-            ((AbstractChunkRendererAccessor<?>) ChunkRenderManager.getRenderer()).getChunks().forEach(list -> {
-                for (AbstractRenderChunk chunk : list) {
-                    for (TextureAtlasSprite sprite : ((ICompiledChunkExpander) chunk).getVisibleTextures()) {
-                        ((IAnimatedSpriteActivator) sprite).setActive(true);
+            IChunkRenderer renderer = ChunkRenderManager.getRenderer();
+            if (renderer != null) {
+                ((AbstractChunkRendererAccessor<?>) renderer).getChunks().forEach(list -> {
+                    for (AbstractRenderChunk chunk : list) {
+                        for (TextureAtlasSprite sprite : ((ICompiledChunkExpander) chunk).getVisibleTextures()) {
+                            ((IAnimatedSpriteActivator) sprite).setActive(true);
+                        }
                     }
-                }
-            });
+                });
+            }
         }
     }
 

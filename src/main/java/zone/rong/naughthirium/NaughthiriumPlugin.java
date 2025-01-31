@@ -4,7 +4,6 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import zone.rong.loliasm.config.LoliConfig;
-import zone.rong.loliasm.core.LoliTransformer;
 
 import java.util.Collections;
 import java.util.List;
@@ -25,7 +24,7 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
         String moduleName = mixinClassName.substring("zone.rong.naughthirium.mixins.".length(), mixinClassName.lastIndexOf('.'));
         switch (moduleName) {
             case "loliasm":
-                return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures && !LoliTransformer.isOptifineInstalled;
+                return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures;
             case "chunkanimator":
                 return Naughthirium.isChunkAnimatorInstalled;
         }
