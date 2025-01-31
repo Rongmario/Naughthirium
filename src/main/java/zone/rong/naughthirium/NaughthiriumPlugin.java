@@ -22,7 +22,14 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        return LoliConfig.instance.onDemandAnimatedTextures && !LoliTransformer.isOptifineInstalled;
+        String moduleName = mixinClassName.substring("zone.rong.naughthirium.mixins.".length(), mixinClassName.lastIndexOf('.'));
+        switch (moduleName) {
+            case "loliasm":
+                return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures && !LoliTransformer.isOptifineInstalled;
+            case "chunkanimator":
+                return Naughthirium.isChunkAnimatorInstalled;
+        }
+        return false;
     }
 
     @Override

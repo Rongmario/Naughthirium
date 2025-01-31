@@ -1,11 +1,14 @@
 package zone.rong.naughthirium;
 
 import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import net.minecraftforge.fml.common.DummyModContainer;
 import net.minecraftforge.fml.common.LoadController;
 import net.minecraftforge.fml.common.MetadataCollection;
 import net.minecraftforge.fml.common.ModMetadata;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
+import zone.rong.naughthirium.compat.chunkanimator.ChunkAnimatorEventListener;
 
 import java.io.File;
 import java.io.InputStream;
@@ -49,6 +52,13 @@ public class NaughthiriumModContainer extends DummyModContainer {
     public boolean registerBus(EventBus bus, LoadController controller) {
         bus.register(this);
         return true;
+    }
+
+    @Subscribe
+    public void onPreInit(FMLPreInitializationEvent event) {
+        if (Naughthirium.isChunkAnimatorInstalled) {
+            ChunkAnimatorEventListener.register();
+        }
     }
 
 }

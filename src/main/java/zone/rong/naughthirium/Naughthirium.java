@@ -1,6 +1,7 @@
 package zone.rong.naughthirium;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import zone.rong.mixinbooter.Context;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 import java.io.File;
@@ -10,6 +11,8 @@ import java.util.*;
 public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     static File source;
+    static boolean isLoliAsmInstalled = false;
+    static boolean isChunkAnimatorInstalled = false;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -39,6 +42,17 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
     @Override
     public List<String> getMixinConfigs() {
         return Collections.singletonList("mixins.naughthirium.json");
+    }
+
+    @Override
+    public boolean shouldMixinConfigQueue(Context context) {
+        if (context.isModPresent("loliasm")) {
+            isLoliAsmInstalled = true;
+        }
+        if (context.isModPresent("chunkanimator")) {
+            isChunkAnimatorInstalled = true;
+        }
+        return true;
     }
 
 }

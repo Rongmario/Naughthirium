@@ -1,6 +1,5 @@
-package zone.rong.naughthirium.mixins;
+package zone.rong.naughthirium.mixins.loliasm;
 
-import it.unimi.dsi.fastutil.objects.ReferenceOpenHashSet;
 import meldexun.nothirium.renderer.chunk.AbstractRenderChunk;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import org.spongepowered.asm.mixin.Mixin;

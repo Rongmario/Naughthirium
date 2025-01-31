@@ -6,13 +6,13 @@
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_8",
   "plugin": "zone.rong.naughthirium.NaughthiriumPlugin",
-  "mixins": [],
-  "server": [],
   "client": [
-    "AbstractChunkRendererAccessor",
-    "AbstractRenderChunkMixin",
-    "RenderChunkTaskCompileMixin",
-    "TextureCoordinateUploaderMixin",
-    "TextureMapMixin"
+    "chunkanimator.AbstractRenderChunkProviderAccessor",
+    "chunkanimator.RenderChunkMixin",
+    "loliasm.AbstractChunkRendererAccessor",
+    "loliasm.AbstractRenderChunkMixin",
+    "loliasm.RenderChunkTaskCompileMixin",
+    "loliasm.TextureCoordinateUploaderMixin",
+    "loliasm.TextureMapMixin"
   ]
 }

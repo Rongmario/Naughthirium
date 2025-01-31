@@ -1,4 +1,4 @@
-package zone.rong.naughthirium.mixins;
+package zone.rong.naughthirium.mixins.loliasm;
 
 import meldexun.nothirium.api.renderer.chunk.RenderChunkTaskResult;
 import meldexun.nothirium.mc.renderer.chunk.RenderChunk;

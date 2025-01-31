@@ -1,4 +1,4 @@
-package zone.rong.naughthirium;
+package zone.rong.naughthirium.compat.loliasm;
 
 import meldexun.matrixutil.UnsafeUtil;
 import meldexun.nothirium.mc.vertex.ExtendedBufferBuilder;
