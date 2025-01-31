@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0] - 2025-01-31
+
+### Added
+- Fixes compatibility with ChunkAnimator not being fully realized as initial render chunks are not queued for animation
+- Fixes compatibility between LoliASM, Optifine and Nothirium, you are now able to use `onDemandAnimatedTextures` properly when all 3 of the mods are installed with animated textures working as intended
+
 ## [1.0.3] - 2025-01-28
 
 ### Fixed
