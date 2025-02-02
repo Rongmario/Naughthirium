@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0] - 2025-02-02
+
+### Added
+- Fixes compatibility with Optifine's Smart Animation (recommend updating LoliASM to 5.23 or greater if you are on this version)
+- Fixes zeroed `drawcount` w/ drivers + optimizes when not rendering certain passes
+
 ## [2.0.0] - 2025-01-31
 
 ### Added
