@@ -13,6 +13,7 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
     static File source;
     static boolean isLoliAsmInstalled = false;
     static boolean isChunkAnimatorInstalled = false;
+    static boolean isOptifineInstalled = false;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -51,6 +52,9 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
         }
         if (context.isModPresent("chunkanimator")) {
             isChunkAnimatorInstalled = true;
+        }
+        if (context.isModPresent("optifine")) {
+            isOptifineInstalled = true;
         }
         return true;
     }

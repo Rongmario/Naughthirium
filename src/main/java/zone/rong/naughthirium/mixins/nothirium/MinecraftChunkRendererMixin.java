@@ -1,6 +1,5 @@
 package zone.rong.naughthirium.mixins.nothirium;
 
-import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import meldexun.nothirium.api.renderer.chunk.ChunkRenderPass;
 import meldexun.nothirium.mc.renderer.chunk.MinecraftChunkRenderer;
 import meldexun.nothirium.mc.renderer.chunk.RenderChunk;

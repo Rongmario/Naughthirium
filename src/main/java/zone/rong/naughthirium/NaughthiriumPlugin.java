@@ -29,6 +29,8 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
                 return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures;
             case "nothirium":
                 return true;
+            case "optifine":
+                return Naughthirium.isOptifineInstalled;
         }
         return false;
     }
