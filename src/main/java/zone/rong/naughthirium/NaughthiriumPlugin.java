@@ -26,7 +26,7 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
             case "chunkanimator":
                 return Naughthirium.isChunkAnimatorInstalled;
             case "loliasm":
-                return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures;
+                return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures && !Naughthirium.isOptifineInstalled;
             case "nothirium":
                 return true;
             case "optifine":
