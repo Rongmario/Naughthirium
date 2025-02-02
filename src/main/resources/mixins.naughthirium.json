@@ -13,6 +13,7 @@
     "loliasm.AbstractRenderChunkMixin",
     "loliasm.RenderChunkTaskCompileMixin",
     "loliasm.TextureCoordinateUploaderMixin",
-    "loliasm.TextureMapMixin"
+    "loliasm.TextureMapMixin",
+    "nothirium.MinecraftChunkRendererMixin"
   ]
 }
