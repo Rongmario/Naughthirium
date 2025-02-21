@@ -27,12 +27,12 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
                 return Naughthirium.isChunkAnimatorInstalled;
             case "loliasm":
                 return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures && !Naughthirium.isOptifineInstalled;
-            case "nothirium":
-                return true;
+            case "multiblocked":
+                return Naughthirium.isMultiblockedInstalled;
             case "optifine":
                 return Naughthirium.isOptifineInstalled;
         }
-        return false;
+        return true;
     }
 
     @Override

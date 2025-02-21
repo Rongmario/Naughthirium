@@ -14,6 +14,7 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
     static boolean isLoliAsmInstalled = false;
     static boolean isChunkAnimatorInstalled = false;
     static boolean isOptifineInstalled = false;
+    static boolean isMultiblockedInstalled = false;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -55,6 +56,9 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
         }
         if (context.isModPresent("optifine")) {
             isOptifineInstalled = true;
+        }
+        if (context.isModPresent("multiblocked")) {
+            isMultiblockedInstalled = true;
         }
         return true;
     }

@@ -39,4 +39,5 @@ dependencies {
 
     implementation rfg.deobf('curse.maven:chunk-animator-236484:3850023')
 
+    implementation rfg.deobf("curse.maven:multiblocked-604054:5576739")
 }
