@@ -32,8 +32,8 @@ dependencies {
     // Include StripLatestForgeRequirements by default for the dev env, saves everyone a hassle
     runtimeOnly 'com.cleanroommc:strip-latest-forge-requirements:1.0'
 
-    implementation rfg.deobf('curse.maven:renderlib-624967:5421689')
-    implementation rfg.deobf('curse.maven:nothirium-624960:4710696')
+    implementation rfg.deobf('curse.maven:renderlib-624967:6218131')
+    implementation rfg.deobf('curse.maven:nothirium-624960:6219433')
 
     compileOnly rfg.deobf('curse.maven:lolasm-460609:5257348')
 
