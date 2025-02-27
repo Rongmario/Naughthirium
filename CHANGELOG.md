@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0] - 2025-02-27
+
+### Added
+- Render fixes with Multiblocked
+
+### Fixed
+- Compatible with a minimum version of RenderLib 1.4.1 and Nothirium 0.4.2
+
 ## [2.1.0] - 2025-02-02
 
 ### Added
