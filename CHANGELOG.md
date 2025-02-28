@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.2.1] - 2025-02-28
+
+### Changed
+- Reverted drawcount zeroing fix, needs further feedback from those with driver incompatibilities
+
 ## [2.2.0] - 2025-02-27
 
 ### Added
