@@ -15,7 +15,6 @@
     "loliasm.TextureCoordinateUploaderMixin",
     "loliasm.TextureMapMixin",
     "multiblocked.RenderChunkTaskCompileMixin",
-    "nothirium.MinecraftChunkRendererMixin",
     "optifine.AbstractChunkRendererMixin",
     "optifine.AbstractRenderChunkMixin",
     "optifine.BufferBuilderAccessor",

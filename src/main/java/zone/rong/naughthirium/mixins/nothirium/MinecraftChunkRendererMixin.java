@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// TODO: Fix error: [glMultiDrawArraysIndirect parameter <drawcount> has an invalid value '0']
+@Deprecated
 @Mixin(value = MinecraftChunkRenderer.class, remap = false)
 public abstract class MinecraftChunkRendererMixin extends AbstractChunkRenderer<RenderChunk> {
 
