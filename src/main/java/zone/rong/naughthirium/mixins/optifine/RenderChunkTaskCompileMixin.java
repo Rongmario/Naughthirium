@@ -22,7 +22,7 @@ public abstract class RenderChunkTaskCompileMixin extends AbstractRenderChunkTas
         super(chunkRenderer, taskDispatcher, renderChunk);
     }
 
-    @Inject(method = "lambda$compileSection$4",
+    @Inject(method = "lambda$compileSection$3",
             at = @At(value = "INVOKE",
                     target = "Lmeldexun/nothirium/mc/renderer/chunk/RenderChunk;" +
                             "setVBOPart(Lmeldexun/nothirium/api/renderer/chunk/ChunkRenderPass;" +
