@@ -12,7 +12,6 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     static File source;
     static boolean isLoliAsmInstalled = false;
-    static boolean isChunkAnimatorInstalled = false;
     static boolean isOptifineInstalled = false;
     static boolean isMultiblockedInstalled = false;
 
@@ -50,9 +49,6 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
     public boolean shouldMixinConfigQueue(Context context) {
         if (context.isModPresent("loliasm")) {
             isLoliAsmInstalled = true;
-        }
-        if (context.isModPresent("chunkanimator")) {
-            isChunkAnimatorInstalled = true;
         }
         if (context.isModPresent("optifine")) {
             isOptifineInstalled = true;

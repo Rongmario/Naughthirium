@@ -8,7 +8,6 @@ import net.minecraftforge.fml.common.MetadataCollection;
 import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
-import zone.rong.naughthirium.compat.chunkanimator.ChunkAnimatorEventListener;
 import zone.rong.naughthirium.compat.optifine.DebugLinesEventListener;
 
 import java.io.File;
@@ -57,9 +56,6 @@ public class NaughthiriumModContainer extends DummyModContainer {
 
     @Subscribe
     public void onPreInit(FMLPreInitializationEvent event) {
-        if (Naughthirium.isChunkAnimatorInstalled) {
-            ChunkAnimatorEventListener.register();
-        }
         if (Naughthirium.isOptifineInstalled) {
             DebugLinesEventListener.register();
         }
