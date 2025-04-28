@@ -23,8 +23,6 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         String moduleName = mixinClassName.substring("zone.rong.naughthirium.mixins.".length(), mixinClassName.lastIndexOf('.'));
         switch (moduleName) {
-            case "chunkanimator":
-                return Naughthirium.isChunkAnimatorInstalled;
             case "loliasm":
                 return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures && !Naughthirium.isOptifineInstalled;
             case "multiblocked":
