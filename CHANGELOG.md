@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.0] - 2025-04-28
+
+### Changed
+- Removed Chunk Animator fixes
+
+### Fixed
+- Compatibility with latest Nothirium, minimum version raised to RenderLib 1.4.5 + Nothirium 0.4.7
+
 ## [2.2.1] - 2025-02-28
 
 ### Changed
