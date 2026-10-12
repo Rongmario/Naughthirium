@@ -12,6 +12,9 @@ Current Patches:
 
 2. Fixes compatibility with `Optifine`'s `Smart Animation` feature. If you have `LoliASM` installed, please update to at least version 5.23 or above
 3. Fixes compatibility with `Multiblocked`'s custom renderer
+4. Fixes compatibility with `Optifine`'s Custom Block Layers
+5. Fixes compatibility with `Little Tiles`
+6. Fixes label rendering above `Dimensional Edibles`' custom cakes
 
 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/naughthirium) + [Modrinth](https://modrinth.com/mod/naughthirium)
 

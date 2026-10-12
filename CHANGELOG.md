@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.0] - 2026-10-12
+
+### Added
+- Respects Optifine's Custom Block Layers from `block.properties`, and mirrors its mipmap block layer fix
+- Fixes crash and missing tiles with Little Tiles
+- Fixes label rendering above Dimensional Edibles' custom cakes
+
+### Fixed
+- Compatibility with Optifine's Smart Animations on Nothirium 0.4.8 and above
+
 ## [2.3.0] - 2025-04-28
 
 ### Changed
