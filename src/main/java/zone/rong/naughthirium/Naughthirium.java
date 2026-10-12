@@ -15,6 +15,7 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
     static boolean isOptifineInstalled = false;
     static boolean isMultiblockedInstalled = false;
     static boolean isDimensionalEdiblesInstalled = false;
+    static boolean isLittleTilesInstalled = false;
 
     @Override
     public String[] getASMTransformerClass() {
@@ -56,6 +57,9 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
         }
         if (context.isModPresent("multiblocked")) {
             isMultiblockedInstalled = true;
+        }
+        if (context.isModPresent("littletiles")) {
+            isLittleTilesInstalled = true;
         }
         return true;
     }

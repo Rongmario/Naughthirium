@@ -32,6 +32,8 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
                 return Naughthirium.isOptifineInstalled;
             case "dimensionaledibles":
                 return Naughthirium.isDimensionalEdiblesInstalled;
+            case "littletiles":
+                return Naughthirium.isLittleTilesInstalled;
         }
         return true;
     }

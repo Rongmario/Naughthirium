@@ -36,6 +36,8 @@ dependencies {
     implementation rfg.deobf('curse.maven:nothirium-624960:6461211')
 
     compileOnly rfg.deobf('curse.maven:lolasm-460609:5257348')
+    compileOnly rfg.deobf('curse.maven:creativecore-257814:4722163')
+    compileOnly rfg.deobf('curse.maven:littletiles-257818:5180387')
 
     implementation rfg.deobf('curse.maven:chunk-animator-236484:3850023')
 

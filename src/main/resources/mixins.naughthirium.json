@@ -11,6 +11,7 @@
     "loliasm.AbstractRenderChunkMixin",
     "loliasm.RenderChunkTaskCompileMixin",
     "loliasm.TextureCoordinateUploaderMixin",
+    "littletiles.RenderChunkTaskCompileMixin",
     "loliasm.TextureMapMixin",
     "multiblocked.RenderChunkTaskCompileMixin",
     "optifine.AbstractChunkRendererMixin",
