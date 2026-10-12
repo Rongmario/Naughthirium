@@ -16,6 +16,7 @@
     "optifine.AbstractChunkRendererMixin",
     "optifine.AbstractRenderChunkMixin",
     "optifine.BufferBuilderAccessor",
+    "optifine.CustomBlockLayersAccessor",
     "optifine.RenderChunkTaskCompileMixin",
     "optifine.SmartAnimationsAccessor",
     "optifine.TextureMapAccessor"

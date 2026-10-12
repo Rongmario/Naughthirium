@@ -7,11 +7,14 @@ import meldexun.nothirium.mc.renderer.chunk.RenderChunk;
 import meldexun.nothirium.mc.renderer.chunk.RenderChunkTaskCompile;
 import meldexun.nothirium.renderer.chunk.AbstractRenderChunkTask;
 import meldexun.nothirium.util.VisibilitySet;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.RegionRenderCacheBuilder;
+import net.minecraft.util.BlockRenderLayer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import zone.rong.naughthirium.compat.optifine.AnimatedSpritesHolder;
 
@@ -30,6 +33,16 @@ public abstract class RenderChunkTaskCompileMixin extends AbstractRenderChunkTas
     private void afterCompilingSection(VisibilitySet visSet, BufferBuilder[] bufferBuilders, RegionRenderCacheBuilder rrcb,
                      CallbackInfo ci, @Local BufferBuilder bufferBuilder) {
         ((AnimatedSpritesHolder) this.renderChunk).naughthirium$optifine$record(((BufferBuilderAccessor) bufferBuilder).getAnimatedSprites());
+    }
+
+    @ModifyArg(method = "renderBlockState",
+            at = @At(value = "INVOKE",
+                    target = "Lnet/minecraft/client/renderer/RegionRenderCacheBuilder;" +
+                            "getWorldRendererByLayer(Lnet/minecraft/util/BlockRenderLayer;)" +
+                            "Lnet/minecraft/client/renderer/BufferBuilder;", remap = true))
+    private BlockRenderLayer useCustomBlockLayer(BlockRenderLayer layer, @Local(argsOnly = true) IBlockState blockState) {
+        BlockRenderLayer customLayer = CustomBlockLayersAccessor.callGetRenderLayer(blockState);
+        return customLayer == null ? layer : customLayer;
     }
 
 }
