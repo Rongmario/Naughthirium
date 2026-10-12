@@ -35,7 +35,10 @@ public abstract class RenderChunkTaskCompileMixin extends AbstractRenderChunkTas
         super(chunkRenderer, taskDispatcher, renderChunk);
     }
 
-    @Inject(method = "lambda$compileSection$3",
+    // Matched by descriptor, the lambda's index differs between Nothirium versions
+    @Inject(method = "*(Lmeldexun/nothirium/util/VisibilitySet;[Lnet/minecraft/client/renderer/BufferBuilder;" +
+            "Lnet/minecraft/client/renderer/RegionRenderCacheBuilder;)V",
+            require = 1,
             at = @At(value = "INVOKE",
                     target = "Lmeldexun/nothirium/mc/renderer/chunk/RenderChunk;" +
                             "setVBOPart(Lmeldexun/nothirium/api/renderer/chunk/ChunkRenderPass;" +
