@@ -14,6 +14,7 @@ public class Naughthirium implements IFMLLoadingPlugin, IEarlyMixinLoader {
     static boolean isLoliAsmInstalled = false;
     static boolean isOptifineInstalled = false;
     static boolean isMultiblockedInstalled = false;
+    static boolean isDimensionalEdiblesInstalled = false;
 
     @Override
     public String[] getASMTransformerClass() {

@@ -21,7 +21,8 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        String moduleName = mixinClassName.substring("zone.rong.naughthirium.mixins.".length(), mixinClassName.lastIndexOf('.'));
+        int moduleEnd = mixinClassName.lastIndexOf('.');
+        String moduleName = mixinClassName.substring(mixinClassName.lastIndexOf('.', moduleEnd - 1) + 1, moduleEnd);
         switch (moduleName) {
             case "loliasm":
                 return Naughthirium.isLoliAsmInstalled && LoliConfig.instance.onDemandAnimatedTextures && !Naughthirium.isOptifineInstalled;
@@ -29,6 +30,8 @@ public class NaughthiriumPlugin implements IMixinConfigPlugin {
                 return Naughthirium.isMultiblockedInstalled;
             case "optifine":
                 return Naughthirium.isOptifineInstalled;
+            case "dimensionaledibles":
+                return Naughthirium.isDimensionalEdiblesInstalled;
         }
         return true;
     }
