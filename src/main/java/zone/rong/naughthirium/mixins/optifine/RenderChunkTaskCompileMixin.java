@@ -7,11 +7,17 @@ import meldexun.nothirium.mc.renderer.chunk.RenderChunk;
 import meldexun.nothirium.mc.renderer.chunk.RenderChunkTaskCompile;
 import meldexun.nothirium.renderer.chunk.AbstractRenderChunkTask;
 import meldexun.nothirium.util.VisibilitySet;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCactus;
+import net.minecraft.block.BlockRedstoneWire;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.RegionRenderCacheBuilder;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraftforge.fml.common.Loader;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -20,6 +26,10 @@ import zone.rong.naughthirium.compat.optifine.AnimatedSpritesHolder;
 
 @Mixin(value = RenderChunkTaskCompile.class, remap = false)
 public abstract class RenderChunkTaskCompileMixin extends AbstractRenderChunkTask<RenderChunk> {
+
+    @Unique private static final boolean naughthirium$optifine$isBetterFoliageLoaded = Loader.isModLoaded("betterfoliage");
+
+    @Unique private final boolean naughthirium$optifine$isMipmaps = Minecraft.getMinecraft().gameSettings.mipmapLevels > 0;
 
     protected RenderChunkTaskCompileMixin(IChunkRenderer<?> chunkRenderer, IRenderChunkDispatcher taskDispatcher, RenderChunk renderChunk) {
         super(chunkRenderer, taskDispatcher, renderChunk);
@@ -40,9 +50,25 @@ public abstract class RenderChunkTaskCompileMixin extends AbstractRenderChunkTas
                     target = "Lnet/minecraft/client/renderer/RegionRenderCacheBuilder;" +
                             "getWorldRendererByLayer(Lnet/minecraft/util/BlockRenderLayer;)" +
                             "Lnet/minecraft/client/renderer/BufferBuilder;", remap = true))
-    private BlockRenderLayer useCustomBlockLayer(BlockRenderLayer layer, @Local(argsOnly = true) IBlockState blockState) {
+    private BlockRenderLayer fixBlockLayer(BlockRenderLayer layer, @Local(argsOnly = true) IBlockState blockState) {
         BlockRenderLayer customLayer = CustomBlockLayersAccessor.callGetRenderLayer(blockState);
-        return customLayer == null ? layer : customLayer;
+        if (customLayer != null) {
+            return customLayer;
+        }
+        // OptiFine leaves layers alone when BetterFoliage is present
+        if (naughthirium$optifine$isBetterFoliageLoaded) {
+            return layer;
+        }
+        if (this.naughthirium$optifine$isMipmaps) {
+            if (layer == BlockRenderLayer.CUTOUT) {
+                Block block = blockState.getBlock();
+                if (!(block instanceof BlockRedstoneWire) && !(block instanceof BlockCactus)) {
+                    return BlockRenderLayer.CUTOUT_MIPPED;
+                }
+            }
+            return layer;
+        }
+        return layer == BlockRenderLayer.CUTOUT_MIPPED ? BlockRenderLayer.CUTOUT : layer;
     }
 
 }
